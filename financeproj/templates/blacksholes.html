@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style> 
+        .blue-box {
+        background-color: blue;
+        display: inline-block;
+        padding: 5px;
+    }
+    .blue-box a {
+        color: white;
+        text-decoration: none;}
+    </style>
+  </head>
+  <body style="background-color:#ADD8E6;text-align:center"></body>
+</html>
+
+<h1>Black & Scholes Option Price Calculator using Normal Distribution</h1>
+<div class="blue-box">
+    <a href="two steps">two steps option pricing calculator</a>
+</div>
+
+<div class="blue-box">
+    <a href="n steps">n steps option pricing calculator</a>
+</div>
+
+<div class="blue-box">
+    <a href="black scholes">black scholes option pricing calculator</a>
+</div>
+<hr>
+<form action="", method="POST">
+    {% csrf_token %}
+    {{bs.as_p}}
+    <input type="submit" value="submit">
+    <input type="reset" value="reset">
+</form>
+<hr>
+{% if put is not None and call is not None %}
+    <div>
+        <h3>Result:</h3>
+    </div>
+    <div>
+        Put: {{put}}
+    </div>
+    <div>
+        Call: {{call}}
+    </div>
+{% endif %}
+
+<img src=" https://cdn.wallstreetmojo.com/wp-content/uploads/2022/12/Black-Scholes-Model.jpg" width="600" height="500" />
